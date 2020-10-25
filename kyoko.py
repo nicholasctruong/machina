@@ -1,11 +1,11 @@
 import os
 import random
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import discord
 from discord.ext import commands
 import statements
 
-load_dotenv()
+# load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
 bot = commands.Bot(command_prefix='.')
