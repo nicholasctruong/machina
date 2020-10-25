@@ -30,7 +30,7 @@ async def compliment(ctx, target: discord.Member, tts=None):
 async def insult(ctx, target: discord.Member, tts=None):
     if target == bot.user:
         target = ctx.author
-        await ctx.send('damn you really tried that and failed.')
+        await ctx.send('damn you really tried and failed')
     insults = statements.insults
     response = random.choice(insults)
     if tts == 'aloud':
