@@ -5,7 +5,7 @@ The motivation for building this came from the desire to add an extra layer of f
 To use, you can pip install discord.py, and replace DISCORD_TOKEN with a valid token
 
 Current abilities:
-- Complimenting and insultng other users
+- Complimenting and insulting other users
 
 Planned abilities:
 - Daily currency system
