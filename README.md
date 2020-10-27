@@ -11,3 +11,4 @@ Planned abilities:
 - Daily currency system
 - Database implementation to keep track of user information
 - Fun vending machine
+- Emote reactions
