@@ -34,10 +34,11 @@ async def compliment(ctx, target='', tts=None):
         await ctx.send('awe thanks!')
     compliments = statements.compliments
     response = random.choice(compliments)
+    tag = target_member.nick if target_member.nick != None else target_member.name
     if tts == 'aloud':
-        await ctx.send(f'<@{target_member.id}>, {response}', tts=True)
+        await ctx.send(f'{tag}, {response}', tts=True)
     else:
-        await ctx.send(f'<@{target_member.id}>, {response}')
+        await ctx.send(f'{tag}, {response}')
 
 @bot.command(name='insult', help='Insults the user that you tag, add "aloud" to insult in tts')
 async def insult(ctx, target='', tts=None):
@@ -47,10 +48,11 @@ async def insult(ctx, target='', tts=None):
         await ctx.send('damn you really tried and failed')
     insults = statements.insults
     response = random.choice(insults)
+    tag = target_member.nick if target_member.nick != None else target_member.name
     if tts == 'aloud':
-        await ctx.send(f'<@{target_member.id}>, {response}', tts=True)
+        await ctx.send(f'{tag}, {response}', tts=True)
     else:
-        await ctx.send(f'<@{target_member.id}>, {response}')
+        await ctx.send(f'{tag}, {response}')
 
 @bot.command(name='pic', help='Generates a random emoji from the server\'s custom emoji list')
 async def pic(ctx):
