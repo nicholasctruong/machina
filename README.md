@@ -7,6 +7,7 @@ To use, you can pip install discord.py, and replace DISCORD_TOKEN with a valid t
 Current abilities:
 - Complimenting and insulting other users
 - TTS capabilities
+- Random emote generator
 
 In process:
 - Recognizing usernames in commands without tagging
