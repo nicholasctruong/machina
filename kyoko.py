@@ -1,11 +1,11 @@
 import os
 import random
-# from dotenv import load_dotenv    #comment out for heroku deployment
+from dotenv import load_dotenv    #comment out for heroku deployment
 import discord
 from discord.ext import commands
 import statements
 
-# load_dotenv()             #comment out for heroku deployment
+load_dotenv()             #comment out for heroku deployment
 TOKEN = os.getenv('DISCORD_TOKEN')
 
 bot = commands.Bot(command_prefix='.')
@@ -38,7 +38,14 @@ async def insult(ctx, target: discord.Member, tts=None):
     else:
         await ctx.send(f'{target.nick}, {response}')
 
-
+@bot.command(name='pic', help='Generates a random emoji from the server\'s custom emoji list')
+async def pic(ctx):
+    emojis = bot.emojis
+    if len(emojis) == 0:
+        await ctx.send(f'Sorry, no custom emojis found on this server!')
+    else:
+        emoji = random.choice(emojis)
+        await ctx.send(f'{emoji}')
 
 
 @bot.event
