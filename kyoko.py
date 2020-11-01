@@ -62,7 +62,7 @@ async def insult(ctx, target='', tts=None):
 
 @bot.command(name='pic', help='Generates a random emoji from the server\'s custom emoji list')
 async def pic(ctx):
-    emojis = bot.emojis
+    emojis = ctx.guild.emojis
     if len(emojis) == 0:
         await ctx.send(f'Sorry, no custom emojis found on this server!')
     else:
