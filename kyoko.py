@@ -1,13 +1,13 @@
 import os
 import random
-from dotenv import load_dotenv    #comment out for heroku deployment
+# from dotenv import load_dotenv    #comment out for heroku deployment
 import discord
 from discord.ext import commands
 import statements
 intents = discord.Intents.default()
 intents.members = True
 
-load_dotenv()             #comment out for heroku deployment
+# load_dotenv()             #comment out for heroku deployment
 TOKEN = os.getenv('DISCORD_TOKEN')
 
 bot = commands.Bot(command_prefix='.', intents = intents)
