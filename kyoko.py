@@ -1,13 +1,13 @@
 import os
 import random
-# from dotenv import load_dotenv    #comment out for heroku deployment
+from dotenv import load_dotenv    #comment out for heroku deployment
 import discord
 from discord.ext import commands
 import statements
 intents = discord.Intents.default()
 intents.members = True
 
-# load_dotenv()             #comment out for heroku deployment
+load_dotenv()             #comment out for heroku deployment
 TOKEN = os.getenv('DISCORD_TOKEN')
 
 bot = commands.Bot(command_prefix='.', intents = intents)
@@ -20,6 +20,12 @@ async def get_user(ctx, target=''):
     '''helper function to return member based on a string search'''
     if target.strip() == '':
         raise commands.errors.MemberNotFound(ctx)
+    try:
+        mem = commands.MemberConverter()
+        target_member = await mem.convert(ctx, target)
+        return target_member
+    except commands.errors.MemberNotFound:
+        pass
     target_members = await ctx.guild.query_members(target)
     if len(target_members) == 0:
         raise commands.errors.MemberNotFound(ctx)
