@@ -32,7 +32,7 @@ async def get_user(ctx, target=''):
     target_member = target_members[0]
     return target_member
 
-@bot.command(name='compliment', help='Compliments the user that you tag, add "aloud" to compliment in tts')
+@bot.command(name='compliment', help='Compliments the user that you tag, add "tts" to compliment in tts')
 async def compliment(ctx, target='', tts=None):
     target_member = await get_user(ctx, target)
     if target_member == bot.user:
@@ -41,12 +41,12 @@ async def compliment(ctx, target='', tts=None):
     compliments = statements.compliments
     response = random.choice(compliments)
     tag = target_member.nick if target_member.nick != None else target_member.name
-    if tts == 'aloud':
+    if tts == 'tts':
         await ctx.send(f'{tag}, {response}', tts=True)
     else:
         await ctx.send(f'{tag}, {response}')
 
-@bot.command(name='insult', help='Insults the user that you tag, add "aloud" to insult in tts')
+@bot.command(name='insult', help='Insults the user that you tag, add "tts" to insult in tts')
 async def insult(ctx, target='', tts=None):
     target_member = await get_user(ctx, target)
     if target_member == bot.user:
@@ -55,7 +55,7 @@ async def insult(ctx, target='', tts=None):
     insults = statements.insults
     response = random.choice(insults)
     tag = target_member.nick if target_member.nick != None else target_member.name
-    if tts == 'aloud':
+    if tts == 'tts':
         await ctx.send(f'{tag}, {response}', tts=True)
     else:
         await ctx.send(f'{tag}, {response}')
