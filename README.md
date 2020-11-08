@@ -8,13 +8,13 @@ Current abilities:
 - Complimenting and insulting other users
 - TTS capabilities
 - Random emote generator
-
-In process:
 - Recognizing usernames in commands without tagging
 
-Planned abilities:
+In process:
 - Daily currency system
 - Database implementation to keep track of user information
+
+Planned abilities:
 - Fun vending machine
 - Choose your own adventure
 - Emote reactions
